@@ -12,10 +12,28 @@ module Wedgie
       end
     end
 
+    # reference cap tasks for all health checks
     def health
-      return 'Implement check health status'
+      return 'Implement cluster check health status'
+      # "curl -XGET --silent 'http://localhost:9200/_cluster/health?pretty=true'"
+    end
+
+    def indexes
+      # "curl -s -XGET http://localhost:9200/_status?pretty=true | grep logstash-201 | grep { | sed -e 's:[{\:\"]::g' | sort -u"
+    end
+
+    def nodes
+      # return a node health check
+    end
+
+    def jvm_status
+      # return a health check of the jvm on all nodes
+    end
+
+    def concurrent_recoveries
+      # allow changing of the concurrent recovered shards
     end
     
-    
+
   end
 end

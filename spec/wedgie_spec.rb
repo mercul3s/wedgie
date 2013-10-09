@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Wedgie::Cluster, "#new"  do
   it "will have default instance variables when created with no index and host specified" do
-    # pending "testing instance varilbles"
     es    = Wedgie::Cluster.new
     host  = es.instance_variable_get(:@host)
     index = es.instance_variable_get(:@index)
@@ -11,14 +10,17 @@ describe Wedgie::Cluster, "#new"  do
   end
 
   it "allows you to override default host and index" do
-    pending "testing instance variable override initialization"
-    es = Wedgie.new(Time.now, "type", "http://host.tld", "index_name")
-    es.instance_variable_get(@host).should eq("http://host.tld")
-    es.instance_variable_get(@index).should eq("index_name")
+    es    = Wedgie::Cluster.new("http://example.com:9200", "test")
+    host  = es.instance_variable_get(:@host)
+    index = es.instance_variable_get(:@index)
+    host.should eq("http://example.com:9200")
+    index.should eq("test")
   end
 end
 
-describe Wedgie, "get_mapping" do
+describe Wedgie::Search, "#new" do
+end
+describe Wedgie::Search, "get_mapping" do
   it "returns a mapping for the specified doc type" do
     # es = Wedgie.new()
     pending "testing mapping"

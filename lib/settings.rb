@@ -5,6 +5,8 @@ require 'debugger'
 module Wedgie
   class Cluster
 
+    # TODO: check input host for http/s, output warning if none and offer to add it
+    # also check for port number offer to add if none
     def initialize(host=nil, index=nil)
       @host  = host
       @index = index

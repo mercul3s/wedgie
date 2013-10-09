@@ -6,10 +6,15 @@ module Wedgie
   class Cluster
 
     def initialize(host=nil, index=nil)
-      @host = host
+      @host  = host
+      @index = index
       if @host.nil?
         @host = 'http://localhost:9200'
       end
+      if @index.nil?
+        @index = ""
+      end
+      return self
     end
 
     # reference cap tasks for all health checks

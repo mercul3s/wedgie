@@ -1,14 +1,13 @@
 require 'spec_helper'
 
-describe Wedgie, "#new"  do
-  it "will have default instance variables" do
-    pending "testing instance varilbles"
-    time = mock(Time)
-    time.expect(:new)
-    es = Wedgie::Search.new(Time.now, "type")
-    es.instance_variable_get(@type).should eq("type")
-    es.instance_variable_get(@host).should eq("http://i.logsearch.rgops.com:9200")
-    es.instance_variable_get(@index).should eq("logstash-#{}")
+describe Wedgie::Cluster, "#new"  do
+  it "will have default instance variables when created with no index and host specified" do
+    # pending "testing instance varilbles"
+    es    = Wedgie::Cluster.new
+    host  = es.instance_variable_get(:@host)
+    index = es.instance_variable_get(:@index)
+    host.should eq("http://localhost:9200")
+    index.should eq("")
   end
 
   it "allows you to override default host and index" do

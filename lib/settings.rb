@@ -26,6 +26,7 @@ module Wedgie
     end
 
     def indexes
+      return 'Implement return list of indexes'
       # "curl -s -XGET http://localhost:9200/_status?pretty=true | grep logstash-201 | grep { | sed -e 's:[{\:\"]::g' | sort -u"
     end
 

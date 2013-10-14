@@ -45,14 +45,20 @@ describe Wedgie::Search, "get_count" do
   end
 end
 
+describe Wedgie::Search, "delete" do
+  it "deletes an index or a document" do
+    pending "finish up method to delete index or doc, split into two methods if needed"
+  end
+end
 
 describe Wedgie::Utilities, "clean_request" do
   it "returns a correctly formatted dsl request as a query string" do
     pending "write and test the method for parsing query string/dsl"
+  end
 end
 
 describe Wedgie::Utilities, "get_result" do
   it "returns the result of an http get request" do
-    pending "testing result"
+    pending "test mocked http request"
   end
 end

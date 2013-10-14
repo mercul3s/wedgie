@@ -5,7 +5,6 @@ require 'debugger'
 # require 'addressable' # => look up this gem, it may have been mentioned
 
 module Wedgie
-
   # store the mapping in an object-oriented way so we can search
   # based on the object.
   # Use this class to return an elasticsearch query on a given index.

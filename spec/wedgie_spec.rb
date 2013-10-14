@@ -18,8 +18,14 @@ describe Wedgie::Cluster, "#new"  do
   end
 end
 
+describe
+
 describe Wedgie::Search, "#new" do
+  it "will create a new search object based off cluster settings" do
+    pending "write and test new search object"
+  end
 end
+
 describe Wedgie::Search, "get_mapping" do
   it "returns a mapping for the specified doc type" do
     # es = Wedgie.new()
@@ -27,26 +33,26 @@ describe Wedgie::Search, "get_mapping" do
   end
 end
 
-describe Wedgie, "query" do
+describe Wedgie::Search, "query" do
   it "returns a query result for the specified search term" do
     pending "testing query"
   end
 end
 
-describe Wedgie, "get_count" do
+describe Wedgie::Search, "get_count" do
   it "returns a count for the specified search term" do
     pending "testing count"
   end
 end
 
-describe Wedgie, "get_result" do
-  it "returns the result of an http get request" do
-    pending "testing result"
-  end
+
+describe Wedgie::Utilities, "clean_request" do
+  it "returns a correctly formatted dsl request as a query string" do
+    pending "write and test the method for parsing query string/dsl"
 end
 
-describe Wedgie, "encode_params" do
-  it "returns a nested hash query as a set of url encoded parameters" do
-    pending "testing parameter encoding"
+describe Wedgie::Utilities, "get_result" do
+  it "returns the result of an http get request" do
+    pending "testing result"
   end
 end
